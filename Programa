@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class Pauta
+{
+    static void Main(string[] args) {
+        Aluno aluno = new Aluno("Lucas");
+
+        aluno.AtribuirNota1(7);
+        aluno.AtribuirNota2(8);
+        aluno.CalcularMedia();
+        aluno.AtribuirFalta();
+        aluno.AtribuirFalta();
+        aluno.DecrescerFalta();
+        aluno.CargaHoraria(10);
+        aluno.ConferirStatus();
+        Console.WriteLine(aluno);
+    }
+
+
+}
