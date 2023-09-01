@@ -1,0 +1,8 @@
+C:\DevC\Pauta\obj\Debug\Pauta.csproj.AssemblyReference.cache
+C:\DevC\Pauta\obj\Debug\Pauta.csproj.SuggestedBindingRedirects.cache
+C:\DevC\Pauta\obj\Debug\Pauta.csproj.CoreCompileInputs.cache
+C:\DevC\Pauta\bin\Debug\Pauta.exe.config
+C:\DevC\Pauta\bin\Debug\Pauta.exe
+C:\DevC\Pauta\bin\Debug\Pauta.pdb
+C:\DevC\Pauta\obj\Debug\Pauta.exe
+C:\DevC\Pauta\obj\Debug\Pauta.pdb
