@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Pauta.Pauta
+{
+    public class Disciplina
+    {
+        private string Nome { get; set; }
+        private Aluno Aluno { get; set; }
+        private int? CargaHoraria { get; set; } 
+
+        public Disciplina(string nome, int? cargaHoraria = null)
+        {
+            Nome = nome;
+            CargaHoraria = cargaHoraria;
+            Aluno = new Aluno("Aluno1");
+        }
+
+    }
+}
