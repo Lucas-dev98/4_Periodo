@@ -4,74 +4,64 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class Aluno
-{
+namespace Pauta.Pauta { 
 
-    public string nomeAluno;
-    public double nota1;
-    public double nota2;
-    public double media;
-    public double cargaHoraria;
-    public double faltas;
-    public string status;
-    public bool isSemestreFinalizado;
+    class Aluno
+    {
 
+        private string NomeAluno { get; set; }
+        private double? Nota1 { get; set; }
+        private double? Nota2 { get; set; }
+        private string Status { get; set; }
+        private bool IsSemestreFinalizado { get; set; }
+        private int Faltas { get; set; }
 
-    public Aluno(string nomeAluno)
-    {
-        this.nomeAluno = nomeAluno;
-    }
-
-    public void AtribuirNota1(double nota1)
-    {
-        this.nota1 = nota1;
-    }
-    public void AtribuirNota2(double nota2)
-    {
-        this.nota2 = nota2;
-    }
-
-    public void CalcularMedia()
-    {
-        media = (nota1 + nota2) / 2;
-    }
-    public void CargaHoraria(double cargaHoraria)
-    {
-        this.cargaHoraria = cargaHoraria;
-    }
-
-    public void AtribuirFalta()
-    {
-        faltas++;
-    }
-
-    public void DecrescerFalta()
-    {
-        faltas--;
-    }
-    public void ConferirStatus()
-    {
-        double limiteFaltas = cargaHoraria * 0.25; // 25% da carga horária
-
-        if (faltas <= limiteFaltas && media >= 7)
+        public Aluno(string nomeAluno,
+                     double? nota1 = null,
+                     double? nota2 = null,
+                     string status = "Indefinido",
+                     int faltas = 0,
+                     bool isSemestreFinalizado = false)
         {
-            status = "Aprovado";
+            NomeAluno = nomeAluno;
+            Nota1 = nota1;
+            Nota2 = nota2;
+            Status = status;
+            Faltas = faltas;
+            IsSemestreFinalizado = isSemestreFinalizado;
+
         }
-        else if (faltas > limiteFaltas || media < 3)
+
+
+        public double CalcularMedia(double n1, double n2)
         {
-            status = "Reprovado";
+           return(n1 + n2) / 2;
         }
-        else
+        public void AtribuirFalta()
         {
-            status = "Em recuperação";
+            Faltas++;
         }
+        public void ChecaAprovado()
+        {
+            if (Nota1 != null || Nota2 != null)
+                IsSemestreFinalizado=true;
+            else
+            {
+                IsSemestreFinalizado = false;
+            }
+        }
+        public void Passou
+        public void DecrescerFalta()
+        {
+            Faltas--;
+        }
+        }
+    /*    public override string ToString()
+        {
+            return "O aluno" + NomeAluno + " possui" + Faltas + " falta(s) e " + " media "
+                + Media + " e esse aluno esta " + Status;
+        }
+    */
+
+
     }
-    public override string ToString()
-    {
-        return "O aluno" + nomeAluno + " possui" +faltas + " falta(s) e " + " media "
-            +media + " e esse aluno esta " + status;
-    }
-
-
-
-}
